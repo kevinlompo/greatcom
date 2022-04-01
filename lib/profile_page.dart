@@ -59,9 +59,6 @@ class ProfilePageState extends State<ProfilePage> {
   Widget build(BuildContext context) {
     double imageSize = MediaQuery.of(context).size.width /4;
     return Scaffold(
-        appBar: AppBar(
-          title: const Text("Mon profil"),
-        ),
         body: SingleChildScrollView(
           child: Column(
             mainAxisSize: MainAxisSize.max,

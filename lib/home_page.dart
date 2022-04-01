@@ -47,13 +47,14 @@ class _HomePage extends State<HomePage> {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Home Page"),
+        title: Text(title()),
+        automaticallyImplyLeading: false,
       ),
       body: Center (
         child: _widgetOptions.elementAt(_selectedIndex),
       ),
       bottomNavigationBar: BottomNavigationBar(
-        iconSize: 15,
+        iconSize: 10,
         backgroundColor: Colors.teal,
           items: <BottomNavigationBarItem> [
             BottomNavigationBarItem(icon: Image.asset('images/lettre-n-majuscule.jpg', height: height /7, width: width/5,), label: 'Actualité', backgroundColor: Colors.teal),
@@ -98,6 +99,25 @@ class _HomePage extends State<HomePage> {
     );
   }
 */
+
+String title() {
+  String t = "";
+  if(_selectedIndex == 0) {
+    t = "Home page";
+  } else if(_selectedIndex == 1) {
+    t = "Annuaire";
+  }
+  else if(_selectedIndex == 2) {
+    t = "Entraide";
+  }
+  else if(_selectedIndex == 3) {
+    t = "Messagerie";
+  }
+  else {
+    t = "Profile";
+  }
+  return t;
+}
 
 
 }
