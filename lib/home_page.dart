@@ -39,14 +39,14 @@ class _HomePage extends State<HomePage> {
       body: Center(
         child: _widgetOptions.elementAt(_selectedIndex),
       ),
-      bottomNavigationBar: bottomBar(height: height, width: width),
+      bottomNavigationBar: bottomBar(),
 
     );
   }
 
 
 
-  BottomNavigationBar bottomBar({required double height, required double width}) {
+  BottomNavigationBar bottomBar() {
     Color? selectedColor = Colors.amber[800];
     return BottomNavigationBar(
       backgroundColor: Colors.teal,
