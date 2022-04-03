@@ -64,7 +64,7 @@ class ProfilePageState extends State<ProfilePage> {
             mainAxisSize: MainAxisSize.max,
             children: [
               Card(
-                color: Colors.deepPurpleAccent.shade100,
+                color: Colors.teal.shade100,
                 elevation: 10,
                 child: Container(
                   width: MediaQuery.of(context).size.width,
@@ -93,7 +93,7 @@ class ProfilePageState extends State<ProfilePage> {
                       ),
                       Text("Hobbies: ${myProfile.setHobbies()}"),
                       Text("Langage de programmation favori: ${myProfile.favoritesLang}"),
-                       Text("Parcours: ${myProfile.setParcours()}",),
+                      Text("Parcours: ${myProfile.setParcours()}",),
                     ],
                   ),
                 )
@@ -244,7 +244,7 @@ class ProfilePageState extends State<ProfilePage> {
     return Text(
       text,
       style: const TextStyle(
-          color: Colors.deepPurple,
+          color: Colors.teal,
           fontWeight: FontWeight.bold,
           fontSize: 18
       ),
@@ -252,7 +252,7 @@ class ProfilePageState extends State<ProfilePage> {
   }
 
   Divider separ() {
-    return const Divider(color: Colors.deepPurpleAccent, thickness: 2,);
+    return const Divider(color: Colors.teal, thickness: 2,);
   }
 
   Future getImage({ required source}) async {

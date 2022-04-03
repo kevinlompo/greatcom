@@ -5,30 +5,16 @@ import 'package:greatcom/text_with_style.dart';
 class HomePage extends StatefulWidget {
   @override
   _HomePage createState() => _HomePage();
-
 }
 
 class _HomePage extends State<HomePage> {
   int _selectedIndex = 0;
-  static const TextStyle optionStyle = TextStyle(fontSize: 30, fontWeight: FontWeight.bold, color: Colors.teal);
-  static const List<Widget> _widgetOptions = <Widget>[
-    Text(
-      'Index 0: Home',
-      style: optionStyle,
-    ),
-    Text(
-      'Index 1: Annuaire',
-      style: optionStyle,
-    ),
-    Text(
-      'Index 2: Entraide',
-      style: optionStyle,
-    ),
-    Text(
-      'Index 3: Messagerie',
-      style: optionStyle,
-    ),
-    ProfilePage()
+  static  final List<Widget> _widgetOptions = <Widget>[
+    TextWithStyle(data: 'Index 0: Home', weight: FontWeight.bold, color: Colors.teal, size: 30,),
+    TextWithStyle(data: 'Index 1: Annuaire', weight: FontWeight.bold, color: Colors.teal, size: 30,),
+    TextWithStyle(data: 'Index 2: Entraide', weight: FontWeight.bold, color: Colors.teal, size: 30,),
+    TextWithStyle(data: 'Index 3: Messagerie', weight: FontWeight.bold, color: Colors.teal, size: 30,),
+    const ProfilePage()
   ];
 
   void _onItemTapped(int index) {
@@ -42,82 +28,60 @@ class _HomePage extends State<HomePage> {
     final size = MediaQuery
         .of(context)
         .size;
-    final height = size.height;
-    final width = size.width;
+    final double height = size.height;
+    final double width = size.width;
 
     return Scaffold(
       appBar: AppBar(
         title: Text(title()),
         automaticallyImplyLeading: false,
       ),
-      body: Center (
+      body: Center(
         child: _widgetOptions.elementAt(_selectedIndex),
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        iconSize: 10,
-        backgroundColor: Colors.teal,
-          items: <BottomNavigationBarItem> [
-            BottomNavigationBarItem(icon: Image.asset('images/lettre-n-majuscule.jpg', height: height /7, width: width/5,), label: 'Actualité', backgroundColor: Colors.teal),
-            BottomNavigationBarItem(icon: Image.asset('images/book.jpg',height: height /7, width: width/5,), label: 'Annuaire', backgroundColor: Colors.teal),
-            BottomNavigationBarItem(icon: Image.asset('images/handShake.png',height: height /7, width: width/5,), label: 'Entraide', backgroundColor: Colors.teal),
-            BottomNavigationBarItem(icon: Image.asset('images/Mail.jpg',height: height /7, width: width/5,), label: 'Messagerie', backgroundColor: Colors.teal),
-            BottomNavigationBarItem(icon: Image.asset('images/user.png',height: height / 7, width: width/5,), label: 'Profile', backgroundColor: Colors.teal)
-          ],
-        currentIndex: _selectedIndex,
-        selectedItemColor: Colors.amber[800],
-        onTap: _onItemTapped,
-      )
+      bottomNavigationBar: bottomBar(height: height, width: width),
 
-
-          /*  buildNavBarItem(pathImage: 'images/lettre-n-majuscule.jpg', width: width, height: height, title: 'Actualité'),
-          buildNavBarItem(pathImage: 'images/book.jpg', width: width, height: height, title: ""),
-          buildNavBarItem(pathImage: 'images/handShake.png', width: width, height: height, title: ""),
-          buildNavBarItem(pathImage: 'images/Mail.jpg', width: width, height: height, title: ""),
-          buildNavBarItem(pathImage: 'images/user.png', width: width, height: height, title: "")*/
     );
   }
 
 
 
-/*
-  Container buildNavBarItem( {required String pathImage, required double width, required height, required String title}) {
-    return Container(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [
-          const Spacer(),
-          Container(
-            height: height/ 6.5,
-            width: width/5,
-            decoration: const BoxDecoration(color: Colors.teal),
-            child:
-            Image.asset(pathImage),
-          ),
-          TextWithStyle(data: title)
-        ],
-      ),
+  BottomNavigationBar bottomBar({required double height, required double width}) {
+    Color? selectedColor = Colors.amber[800];
+    return BottomNavigationBar(
+      backgroundColor: Colors.teal,
+      items:  [
+        BottomNavigationBarItem(icon: Image.asset('images/lettre-n-majuscule.jpg', height: 27, color: (_selectedIndex == 0) ? selectedColor : Colors.white,), label: 'Actualité', backgroundColor: Colors.teal),
+        const BottomNavigationBarItem(icon: Icon(Icons.menu_book_outlined), label: 'Annuaire', backgroundColor: Colors.teal),
+        const BottomNavigationBarItem(icon: Icon(Icons.handshake), label: 'Entraide', backgroundColor: Colors.teal),
+        const BottomNavigationBarItem(icon: Icon(Icons.mail), label: 'Messagerie', backgroundColor: Colors.teal,),
+        const BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile', backgroundColor: Colors.teal)
+      ],
+      currentIndex: _selectedIndex,
+      selectedItemColor: selectedColor,
+      onTap: _onItemTapped,
     );
   }
-*/
 
-String title() {
-  String t = "";
-  if(_selectedIndex == 0) {
-    t = "Home page";
-  } else if(_selectedIndex == 1) {
-    t = "Annuaire";
+
+  String title() {
+    String t = "";
+    if(_selectedIndex == 0) {
+      t = "Home page";
+    } else if(_selectedIndex == 1) {
+      t = "Annuaire";
+    }
+    else if(_selectedIndex == 2) {
+      t = "Entraide";
+    }
+    else if(_selectedIndex == 3) {
+      t = "Messagerie";
+    }
+    else {
+      t = "Profile";
+    }
+    return t;
   }
-  else if(_selectedIndex == 2) {
-    t = "Entraide";
-  }
-  else if(_selectedIndex == 3) {
-    t = "Messagerie";
-  }
-  else {
-    t = "Profile";
-  }
-  return t;
-}
 
 
 }
