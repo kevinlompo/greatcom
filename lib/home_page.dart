@@ -34,7 +34,6 @@ class _HomePage extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         title: Text(title()),
-        automaticallyImplyLeading: false,
       ),
       body: Center(
         child: _widgetOptions.elementAt(_selectedIndex),
