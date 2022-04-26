@@ -7,6 +7,9 @@ class Profile {
   List<String> hobbies = [];
   String favoritesLang;
   String parcours;
+  String departement;
+  String pwd;
+  String role;
 
 
   Profile({
@@ -17,7 +20,10 @@ class Profile {
     this.height = 0.0,
     this.hobbies = const [],
     this.favoritesLang = "Dart",
-    this.parcours = ""
+    this.parcours = "",
+    this.departement = "",
+    this.pwd = "",
+    this.role = ""
   });
 
   String setName() => "$surname $name";

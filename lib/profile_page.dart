@@ -15,6 +15,7 @@ class ProfilePageState extends State<ProfilePage> {
   late TextEditingController surname;
   late TextEditingController name;
   late TextEditingController parcours;
+  late TextEditingController pwd;
   late TextEditingController age;
   bool showSecret = false;
 
@@ -39,11 +40,13 @@ class ProfilePageState extends State<ProfilePage> {
     surname = TextEditingController();
     name = TextEditingController();
     parcours = TextEditingController();
+    pwd = TextEditingController();
     age = TextEditingController();
     surname.text = myProfile.surname;
     name.text = myProfile.name;
     parcours.text = myProfile.parcours;
     age.text = myProfile.age.toString();
+    pwd.text = myProfile.pwd;
   }
 
   @override
@@ -114,6 +117,7 @@ class ProfilePageState extends State<ProfilePage> {
               myTextField(controller: surname, hint: "Entrez votre prénom", isSecret: false),
               myTextField(controller: name, hint: "Entrez votre nom", isSecret: false),
               myTextField(controller: parcours, hint: "Dites nous votre parcours", isSecret: false),
+              myTextField(controller: pwd, hint: "Entrer votre mot de passe secret", isSecret: true),
               myTextField(controller: age, hint: "Entrez votre âge", isSecret: false, type: TextInputType.number),
               Row(
                 mainAxisSize: MainAxisSize.max,
@@ -176,6 +180,7 @@ class ProfilePageState extends State<ProfilePage> {
           favoritesLang:myProfile.favoritesLang,
           hobbies: myProfile.hobbies,
           height: myProfile.height,
+          pwd: myProfile.pwd,
           age: int.parse(age.text),
           gender: myProfile.gender
       );
