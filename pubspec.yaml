@@ -39,6 +39,13 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  flutter_native_splash: ^2.1.6
+
+
+flutter_native_splash:
+  color: "#5EB66F"
+  image: images/logo1.png
+
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
