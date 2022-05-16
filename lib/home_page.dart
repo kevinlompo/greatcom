@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:greatcom/profile_page.dart';
 import 'package:greatcom/text_with_style.dart';
+import 'package:firebase_core/firebase_core.dart';
 
 class HomePage extends StatefulWidget {
   @override

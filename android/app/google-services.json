@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "18892687392",
+    "project_id": "greatcom-b75c7",
+    "storage_bucket": "greatcom-b75c7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:18892687392:android:b1753963b0c219956b9445",
+        "android_client_info": {
+          "package_name": "com.example.greatcom"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "18892687392-fdreu9porfqi1aevp8d8bhfq18ikvsu7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBqQSmu5lAJtzv0xKGoZDycsWsqKLSnAZs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "18892687392-fdreu9porfqi1aevp8d8bhfq18ikvsu7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
