@@ -2,7 +2,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:greatcom/profile.dart';
-import 'package:firebase_core/firebase_core.dart';
+// import 'package:firebase_core/firebase_core.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({Key? key}) : super(key: key);
@@ -147,6 +147,107 @@ class ProfilePageState extends State<ProfilePage> {
                         });
                       }))
                 ],
+              ),
+              separ(),
+              myTitle('Parcours Scolaire'),
+              DataTable(
+                columns: const <DataColumn>[
+                  DataColumn(
+                    label: Text(
+                      'Dates',
+                      // style: TextStyle(fontStyle: FontStyle.italic),
+                    ),
+                  ),
+                  DataColumn(
+                    label: Text(
+                      'Cursus',
+                      // style: TextStyle(fontStyle: FontStyle.italic),
+                    ),
+                  ),
+                  DataColumn(
+                    label: Text(
+                      'action',
+                      // style: TextStyle(fontStyle: FontStyle.italic),
+                    ),
+                  ),
+                ],
+                rows: const <DataRow>[
+                  DataRow(
+                    cells: <DataCell>[
+                      DataCell(Text('2021/2022')),
+                      DataCell(Text('Bachelor D&I')),
+                      DataCell(Text('edit / deleted')),
+                    ],
+                  ),
+                  DataRow(
+                    cells: <DataCell>[
+                      DataCell(Text('2019/2021')),
+                      DataCell(Text('BTS SIO SLAM')),
+                      DataCell(Text('edit / deleted')),
+                    ],
+                  ),
+                  DataRow(
+                    cells: <DataCell>[
+                      DataCell(Text('2018/2019')),
+                      DataCell(Text('L1 MiPi')),
+                      DataCell(Text('edit / deleted')),
+                    ],
+                  ),
+                ],
+              ),
+              separ(),
+              myTitle('Parcours Professionnel'),
+              Row(
+                // mainAxisSize: MainAxisSize.max,
+                // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  DataTable(
+                    columns: const <DataColumn>[
+                      DataColumn(
+                        label: Text(
+                          'Dates',
+                          // style: TextStyle(fontStyle: FontStyle.italic),
+                        ),
+                      ),
+                      DataColumn(
+                        label: Text(
+                          'Entreprise',
+                          // style: TextStyle(fontStyle: FontStyle.italic),
+                        ),
+                      ),
+                      DataColumn(
+                        label: Text(
+                          'Poste',
+                          // style: TextStyle(fontStyle: FontStyle.italic),
+                        ),
+                      ),
+                      DataColumn(
+                        label: Text(
+                          'action',
+                          // style: TextStyle(fontStyle: FontStyle.italic),
+                        ),
+                      ),
+                    ],
+                    rows: const <DataRow>[
+                      DataRow(
+                        cells: <DataCell>[
+                          DataCell(Text('2021/2022')),
+                          DataCell(Text('Keymex France')),
+                          DataCell(Text('alternance Développeur Web')),
+                          DataCell(Text('edit / deleted')),
+                        ],
+                      ),
+                      DataRow(
+                        cells: <DataCell>[
+                          DataCell(Text('2020')),
+                          DataCell(Text('infotrafic')),
+                          DataCell(Text('stage Développeur Web')),
+                          DataCell(Text('edit / deleted')),
+                        ],
+                      ),
+                    ],
+                  ),
+                ]
               ),
               separ(),
               myHobbies(),
