@@ -197,58 +197,55 @@ class ProfilePageState extends State<ProfilePage> {
               ),
               separ(),
               myTitle('Parcours Professionnel'),
-              Row(
-                // mainAxisSize: MainAxisSize.max,
-                // mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  DataTable(
-                    columns: const <DataColumn>[
-                      DataColumn(
-                        label: Text(
-                          'Dates',
-                          // style: TextStyle(fontStyle: FontStyle.italic),
-                        ),
-                      ),
-                      DataColumn(
-                        label: Text(
-                          'Entreprise',
-                          // style: TextStyle(fontStyle: FontStyle.italic),
-                        ),
-                      ),
-                      DataColumn(
-                        label: Text(
-                          'Poste',
-                          // style: TextStyle(fontStyle: FontStyle.italic),
-                        ),
-                      ),
-                      DataColumn(
-                        label: Text(
-                          'action',
-                          // style: TextStyle(fontStyle: FontStyle.italic),
-                        ),
-                      ),
-                    ],
-                    rows: const <DataRow>[
-                      DataRow(
-                        cells: <DataCell>[
-                          DataCell(Text('2021/2022')),
-                          DataCell(Text('Keymex France')),
-                          DataCell(Text('alternance Développeur Web')),
-                          DataCell(Text('edit / deleted')),
+                    SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      child: DataTable(
+                        columns: const <DataColumn>[
+                          DataColumn(
+                            label: Text(
+                              'Dates',
+                              // style: TextStyle(fontStyle: FontStyle.italic),
+                            ),
+                          ),
+                          DataColumn(
+                            label: Text(
+                              'Entreprise',
+                              // style: TextStyle(fontStyle: FontStyle.italic),
+                            ),
+                          ),
+                          DataColumn(
+                            label: Text(
+                              'Poste',
+                              // style: TextStyle(fontStyle: FontStyle.italic),
+                            ),
+                          ),
+                          DataColumn(
+                            label: Text(
+                              'action',
+                              // style: TextStyle(fontStyle: FontStyle.italic),
+                            ),
+                          ),
+                        ],
+                        rows: const <DataRow>[
+                          DataRow(
+                            cells: <DataCell>[
+                              DataCell(Text('2021/2022')),
+                              DataCell(Text('Keymex France')),
+                              DataCell(Text('alternance Développeur Web')),
+                              DataCell(Text('edit / deleted')),
+                            ],
+                          ),
+                          DataRow(
+                            cells: <DataCell>[
+                              DataCell(Text('2020')),
+                              DataCell(Text('infotrafic')),
+                              DataCell(Text('stage Développeur Web')),
+                              DataCell(Text('edit / deleted')),
+                            ],
+                          ),
                         ],
                       ),
-                      DataRow(
-                        cells: <DataCell>[
-                          DataCell(Text('2020')),
-                          DataCell(Text('infotrafic')),
-                          DataCell(Text('stage Développeur Web')),
-                          DataCell(Text('edit / deleted')),
-                        ],
-                      ),
-                    ],
-                  ),
-                ]
-              ),
+                    ),
               separ(),
               myHobbies(),
               separ(),
