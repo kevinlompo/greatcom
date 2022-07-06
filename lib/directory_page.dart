@@ -1,6 +1,4 @@
-import 'dart:io';
 import 'package:flutter/material.dart';
-import 'package:image_picker/image_picker.dart';
 
 class DirectoryPage extends StatefulWidget {
   const DirectoryPage({Key? key}) : super(key: key);
@@ -11,23 +9,7 @@ class DirectoryPage extends StatefulWidget {
 
 class DirectoryPageState extends State<DirectoryPage> {
 
-  ImagePicker picker = new ImagePicker();
-  File? imageFile;
 
-  SearchField() {
-    return Padding(
-      padding: EdgeInsets.all(20.0),
-      child: TextField(
-        decoration: InputDecoration(
-            contentPadding: EdgeInsets.all(5.0),
-            hintText: 'Rechercher par nom de famille'
-        ),
-        onChanged: (string) {
-
-        },
-      ),
-    );
-  }
   @override
   Widget build(BuildContext context) {
     double imageSize = MediaQuery.of(context).size.width /4;
@@ -41,8 +23,10 @@ class DirectoryPageState extends State<DirectoryPage> {
                 margin: const EdgeInsets.all(10),
                 padding: const EdgeInsets.all(8),
 
+                // searchField,
+
+
               ),
-              SearchField(),
               // Card(
               //   child: new ListTile(
               //     leading: new Icon(Icons.search),
@@ -102,7 +86,7 @@ class DirectoryPageState extends State<DirectoryPage> {
                     cells: <DataCell>[
                       DataCell(
                         CircleAvatar(
-                          backgroundImage: AssetImage("https://codabee.com/wp-content/uploads/2018/03/cropped-Artboard-2.png")
+                          backgroundImage: AssetImage("images/profile.jpg")
                         ),
                       ),
                       DataCell(Text('Lupin')),
@@ -114,10 +98,10 @@ class DirectoryPageState extends State<DirectoryPage> {
                     cells: <DataCell>[
                       DataCell(
                         CircleAvatar(
-                            backgroundImage: AssetImage("https://codabee.com/wp-content/uploads/2018/03/cropped-Artboard-2.png")
+                            backgroundImage: AssetImage("images/profile.jpg")
                         ),
                       ),
-                      DataCell(Text('oooo')),
+                      DataCell(Text('Lupin')),
                       DataCell(Text('Meyer')),
                       DataCell(Text('2019/2020')),
                     ],
@@ -126,7 +110,7 @@ class DirectoryPageState extends State<DirectoryPage> {
                     cells: <DataCell>[
                       DataCell(
                         CircleAvatar(
-                            backgroundImage: AssetImage("https://codabee.com/wp-content/uploads/2018/03/cropped-Artboard-2.png")
+                            backgroundImage: AssetImage("images/profile.jpg")
                         ),
                       ),
                       DataCell(Text('Lupin')),
@@ -171,4 +155,8 @@ class DirectoryPageState extends State<DirectoryPage> {
   }
 
 
+}
+
+CircleAvatar myProfilePic({required double radius}) {
+  return  CircleAvatar(radius: radius, backgroundImage: const AssetImage("images/profile.jpg"),);
 }

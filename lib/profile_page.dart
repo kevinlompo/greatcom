@@ -2,7 +2,6 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:greatcom/profile.dart';
-// import 'package:firebase_core/firebase_core.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({Key? key}) : super(key: key);
@@ -247,7 +246,50 @@ class ProfilePageState extends State<ProfilePage> {
                       ),
                     ),
               separ(),
-              myHobbies(),
+              // myHobbies(),
+              myTitle('Mes Passions'),
+              DataTable(
+                columns: const <DataColumn>[
+                  DataColumn(
+                    label: Text(
+                      'Hobis',
+                      // style: TextStyle(fontStyle: FontStyle.italic),
+                    ),
+                  ),
+                  DataColumn(
+                    label: Text(
+                      'action',
+                      // style: TextStyle(fontStyle: FontStyle.italic),
+                    ),
+                  ),
+                ],
+                rows: const <DataRow>[
+                  DataRow(
+                    cells: <DataCell>[
+                      DataCell(Text('pétanque')),
+                      DataCell(Text('edit / deleted')),
+                    ],
+                  ),
+                  DataRow(
+                    cells: <DataCell>[
+                      DataCell(Text('musique')),
+                      DataCell(Text('edit / deleted')),
+                    ],
+                  ),
+                  DataRow(
+                    cells: <DataCell>[
+                      DataCell(Text('football')),
+                      DataCell(Text('edit / deleted')),
+                    ],
+                  ),
+                  DataRow(
+                    cells: <DataCell>[
+                      DataCell(Text('Dessin')),
+                      DataCell(Text('edit / deleted')),
+                    ],
+                  ),
+                ],
+              ),
               separ(),
               myRadio(),
             ],
