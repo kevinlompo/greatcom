@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:greatcom/directory_page.dart';
 import 'package:greatcom/profile_page.dart';
 import 'package:greatcom/text_with_style.dart';
-import 'package:firebase_core/firebase_core.dart';
+import 'admin_page.dart';
+
 
 class HomePage extends StatefulWidget {
   @override
@@ -10,12 +12,17 @@ class HomePage extends StatefulWidget {
 
 class _HomePage extends State<HomePage> {
   int _selectedIndex = 0;
+  int isAdmin = 0;
+
+
   static  final List<Widget> _widgetOptions = <Widget>[
     TextWithStyle(data: 'Index 0: Home', weight: FontWeight.bold, color: Colors.teal, size: 30,),
-    TextWithStyle(data: 'Index 1: Annuaire', weight: FontWeight.bold, color: Colors.teal, size: 30,),
+    // TextWithStyle(data: 'Index 1: Annuaire', weight: FontWeight.bold, color: Colors.teal, size: 30,),
+    const DirectoryPage(),
     TextWithStyle(data: 'Index 2: Entraide', weight: FontWeight.bold, color: Colors.teal, size: 30,),
     TextWithStyle(data: 'Index 3: Messagerie', weight: FontWeight.bold, color: Colors.teal, size: 30,),
-    const ProfilePage()
+    const ProfilePage(),
+    const AdminPage()
   ];
 
   void _onItemTapped(int index) {
@@ -55,7 +62,8 @@ class _HomePage extends State<HomePage> {
         const BottomNavigationBarItem(icon: Icon(Icons.menu_book_outlined), label: 'Annuaire', backgroundColor: Colors.teal),
         const BottomNavigationBarItem(icon: Icon(Icons.handshake), label: 'Entraide', backgroundColor: Colors.teal),
         const BottomNavigationBarItem(icon: Icon(Icons.mail), label: 'Messagerie', backgroundColor: Colors.teal,),
-        const BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile', backgroundColor: Colors.teal)
+        const BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile', backgroundColor: Colors.teal),
+        const BottomNavigationBarItem(icon: Icon(Icons.settings), label: 'Administrateur', backgroundColor: Colors.teal)
       ],
       currentIndex: _selectedIndex,
       selectedItemColor: selectedColor,
@@ -67,7 +75,7 @@ class _HomePage extends State<HomePage> {
   String title() {
     String t = "";
     if(_selectedIndex == 0) {
-      t = "Home page";
+      t = "Actualités";
     } else if(_selectedIndex == 1) {
       t = "Annuaire";
     }
@@ -76,6 +84,9 @@ class _HomePage extends State<HomePage> {
     }
     else if(_selectedIndex == 3) {
       t = "Messagerie";
+    }
+    else if(_selectedIndex == 5){
+      t = "Administration";
     }
     else {
       t = "Profile";
